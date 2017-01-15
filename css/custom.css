@@ -1,0 +1,27 @@
+body {
+	background-color: #fefefe;
+}
+
+#imgCont {
+	background:#eeeeee;
+	width:auto;
+	height:300px;
+	padding: 5px 5px 5px 5px;
+	border: 1px solid #cccccc;
+	margin-top:10px;
+	overflow: auto;
+}
+
+#imgCont img {
+	width:90px;
+	border:1px solid #bbbbbb;
+	margin-right:5px;
+	transition:all ease .2s;
+	-webkit-transition:all ease .2s;
+}
+#imgCont img:hover {
+	opacity:.8;
+	transition:all ease .2s;
+	-webkit-transition:all ease .2s;
+}
+

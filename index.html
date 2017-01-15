@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="crud" >
+<head>
+	<meta charset="UTF-8">
+	<title>Rest API Visual Client</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Incluimos el CND de Materialize CSS -->
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<!-- Nuestro CSS personalizado -->
+	<link rel="stylesheet" href="css/custom.css">
+	<!-- Incluimos el CND de AngularJS -->
+	<script src="js/angular.min.js"></script>
+	<!-- Incluimos el CND de la libreria jQuery -->
+	<script src="js/jquery-3.1.1.min.js"></script>
+	
+</head>
+<body class="container" ng-controller="mainCtrl">
+
+	<div class="row">
+		<div class="col s12">
+			<h1>{{message}}</h1>
+			<p>{{subtitle}}</p>	
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12 m6 l6">
+			<div class="row">
+				<div class="col s12">
+					<h6><small>Solo JPG, PNG, GIF</small></h6>
+					<input id="inputFileToLoad" type="file"/>
+					<button class="btn" ng-click="encodeImageFileAsURL()">Subir</button>
+					
+					
+				</div>
+				<div class="col s12">
+					<div id="imgCont">
+						<img ng-click="cargarImagen('upload/' + x)" ng-repeat="x in imagenes" src="upload/{{x}}" title="{{x}}" alt="{{x}}">
+					</div>
+
+
+				</div>
+
+				<div class="input-field col s12">
+				    <input id="Link" type="text" placeholder="Enlace directo" class="validate" readonly ng-value="enlaces.link" ng-model="enlaces.link">
+				</div>
+				<div class="input-field col s12">
+				    <input id="HTML" type="text" class="validate" placeholder="Codigo HTML" readonly ng-value="enlaces.html" ng-model="enlaces.html">
+				</div>
+				<div class="input-field col s12">
+				    <input id="Forum" type="text" class="validate" placeholder="Codigo para foros" readonly ng-value="enlaces.foros" ng-model="enlaces.foros">
+				</div>
+
+			</div>
+			
+		</div>
+
+		<div class="col s12 m6 l6">
+			<div id="imgTest" class="center-align">
+
+				<div class="preloader-wrapper small active">
+				    <div class="spinner-layer spinner-green-only">
+				      <div class="circle-clipper left">
+				        <div class="circle"></div>
+				      </div><div class="gap-patch">
+				        <div class="circle"></div>
+				      </div><div class="circle-clipper right">
+				        <div class="circle"></div>
+				      </div>
+				    </div>
+
+
+				</div>
+				<p>Esperando imagen</p>
+
+				<img id="imagen" width="100%" alt="">
+
+			</div>
+		</div>
+	</div>
+
+
+
+	
+	    
+	<!-- Nuestro codigo JavaScript personal -->
+	<script src="js/custom.js"></script>	
+	<!-- Incluimos el CND de Materialize JS -->
+  	<script src="js/materialize.min.js"></script>
+</body>
+</html>
